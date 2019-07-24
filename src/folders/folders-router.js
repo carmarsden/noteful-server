@@ -24,7 +24,7 @@ foldersRouter
     })
     .post(jsonParser, (req, res, next) => {
         // check fol_name exists
-        if (!req.body[fol_name]) {
+        if (!req.body.fol_name) {
             logger.error(`fol_name is required to post`);
             return res.status(400).json({
                 error: { message: `Missing 'fol_name' in request body` }
